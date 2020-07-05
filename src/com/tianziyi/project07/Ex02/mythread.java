@@ -12,15 +12,13 @@ public class mythread extends Thread{
     Socket socket,socket2;
     JTextArea text_receiver;
     String name;
-    public mythread(Socket socket,JTextArea text_receiver,String name,Socket socket2)
-    {
+    public mythread(Socket socket,JTextArea text_receiver,String name,Socket socket2) {
         this.socket=socket;
         this.text_receiver=text_receiver;
         this.name=name;
         this.socket2=socket2;
     }
-    public void run ()
-    {
+    public void run () {
         BufferedReader br;
         PrintWriter cout;
         String line;
@@ -28,8 +26,7 @@ public class mythread extends Thread{
             cout=new PrintWriter(socket2.getOutputStream(),true);
             br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             line = "连接"+br.readLine()+"成功";
-            while (line!=null && !line.endsWith("bye"))
-            {
+            while (line!=null && !line.endsWith("bye")) {
                 text_receiver.append(line+"\r\n");
                 //显示对方发来的内容
                 // line=name+"说："+line;
@@ -38,9 +35,7 @@ public class mythread extends Thread{
             }
             br.close();
         } catch (IOException e) {
-            // TODO 自动生成的 catch 块
             e.printStackTrace();
         }               //接收到对方网名
-
     }
 }

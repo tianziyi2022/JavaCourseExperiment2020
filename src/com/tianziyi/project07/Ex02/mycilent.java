@@ -7,9 +7,7 @@ import java.net.UnknownHostException;
 public class mycilent {
 
     public static void main(String[] args) throws UnknownHostException, IOException {
-        // TODO 自动生成的方法存根
         Socket socket=new Socket("127.0.0.1",2001);
         new ChatTCPSocketJFrame("清泉。",socket);
     }
-
 }

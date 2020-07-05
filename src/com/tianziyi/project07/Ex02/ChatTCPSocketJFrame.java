@@ -5,8 +5,7 @@ import javax.swing.*;
 import java.io.*;
 import java.net.*;
 
-public class ChatTCPSocketJFrame extends JFrame implements ActionListener
-{
+public class ChatTCPSocketJFrame extends JFrame implements ActionListener {
     private String name;                                   //网名
     private JTextArea text_receiver;                       //显示对话内容的文本区
     private JTextField text_sender;                        //输入发送内容的文本行
@@ -14,7 +13,6 @@ public class ChatTCPSocketJFrame extends JFrame implements ActionListener
     private JButton[] buttons;                             //按钮数组
 
     public ChatTCPSocketJFrame(String name, Socket socket) throws IOException{ //客户端
-
         super("聊天室  "+name+"  "+InetAddress.getLocalHost()+" : "+socket.getLocalPort());
         this.setBounds(320,240,400,240);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -62,9 +60,7 @@ public class ChatTCPSocketJFrame extends JFrame implements ActionListener
     }
 
 
-    public static void main(String args[]) throws IOException
-    {
-
+    public static void main(String args[]) throws IOException {
         Socket socket2=new Socket("127.0.0.1",2002);
         //客户端向服务端主机的端口发出TCP连接请求
         new ChatTCPSocketJFrame("田梓毅",socket2);

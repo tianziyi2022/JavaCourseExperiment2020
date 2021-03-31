@@ -45,9 +45,9 @@ public class Ex01 {
         }
     }
     public Connection getConnection(){
-        String url = "jdbc:mysql://cdb-7baisrai.bj.tencentcdb.com:10225/Studentinfo";
+        String url = "jdbc:mysql://****************";
         try {
-            con = DriverManager.getConnection(url, "root", "tzy20000712");
+            con = DriverManager.getConnection(url, "****", "**********");
             sta = con.createStatement();
             System.out.println("连接成功");
         } catch (SQLException e) {
